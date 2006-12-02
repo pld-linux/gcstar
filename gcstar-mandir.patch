@@ -1,0 +1,23 @@
+diff -Nur gcstar.orig/install gcstar/install
+--- gcstar.orig/install	2006-08-18 12:12:00.000000000 +0000
++++ gcstar/install	2006-12-02 17:46:03.000000000 +0000
+@@ -95,7 +95,7 @@
+     }
+     
+     unlink $baseDir.'/bin/'.$binName;
+-    unlink $baseDir.'/man/man1'.$binName.'1';
++    unlink $baseDir.'/share/man/man1'.$binName.'1';
+ }
+ 
+ sub recursiveCopy
+@@ -142,8 +142,8 @@
+     mkpath $baseDir.'/bin';
+     copy 'bin/gcstar', $baseDir.'/bin/'.$binName;
+     
+-    mkpath $baseDir.'/man/man1';
+-    my $manPage = "$baseDir/man/man1/$binName.1";
++    mkpath $baseDir.'/share/man/man1';
++    my $manPage = "$baseDir/share/man/man1/$binName.1";
+     copy 'man/gcstar.1', $manPage;
+     `gzip $manPage 2>&1 >/dev/null`;
+     

@@ -1,0 +1,11 @@
+diff -Nur gcstar.orig/share/applications/gcstar.desktop gcstar/share/applications/gcstar.desktop
+--- gcstar.orig/share/applications/gcstar.desktop	2005-11-14 14:55:00.000000000 +0000
++++ gcstar/share/applications/gcstar.desktop	2006-12-02 18:11:54.000000000 +0000
+@@ -2,6 +2,7 @@
+ Encoding=UTF-8
+ Name=GCstar
+ Comment=Movie Collection Catalog
++Comment[pl]=Katalog kolekcji
+ Comment[en]=Movie Catalog
+ Comment[es]=Catálogo de Películas
+ Comment[fr]=Catalogue de Films
