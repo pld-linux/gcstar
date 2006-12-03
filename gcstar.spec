@@ -1,6 +1,5 @@
-#
 %include        /usr/lib/rpm/macros.perl
-Summary:	GCstar: collection manager.
+Summary:	GCstar: collection manager
 Name:		gcstar
 Version:	0.5.0
 Release:	1
@@ -10,12 +9,12 @@ Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 # Source0-md5:	12ba75fe2f3091c1ccd03864424a34e2
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
-BuildRequires:	perl(Gtk2)
-BuildRequires:	perl(LWP::Simple)
+BuildRequires:	perl-Gtk2
+BuildRequires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GCstar is a free application for managing your collections. 
+GCstar is a free application for managing your collections.
 
 %prep
 %setup -q -n %{name}
@@ -27,8 +26,8 @@ GCstar is a free application for managing your collections.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./install 	--text \
-		--prefix=$RPM_BUILD_ROOT/usr
+./install --text \
+	--prefix=$RPM_BUILD_ROOT%{_prefix}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
