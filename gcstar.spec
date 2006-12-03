@@ -27,7 +27,7 @@ needed. For the moment it supports these ones:
 %description -l pl
 GCstar jest aplikacj± do zarz±dzania ró¿nymi rodzajami kolekcji. Jest
 zaprojektowana by móc wspieraæ wszystkie potrzebne typy kolekcji.
-Aktualnie wpsiera kolekcje:
+Aktualnie wspiera kolekcje:
  - filmów
  - gier wideo
  - ksi±¿ek
