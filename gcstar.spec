@@ -1,3 +1,8 @@
+# NOTES:- warnings like this: /usr/lib/rpm/perl.prov: weird, cannot determine the package name for
+#	 `/mnt/hda5/tmp/gcstar-0.5.0-root-inter/usr/lib/gcstar/GCLang/BG/GCstar.pm'
+#	- wrong? perl modules location: /usr/lib/gcstar
+#	- putting files in /usr/lib/ makes this package arch dependent
+#
 %include        /usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(pl):	GCstar: zarz±dca kolekcji
@@ -11,8 +16,10 @@ Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 URL:		https://gna.org/projects/gcstar/
+BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
 BuildRequires:	perl-libwww
+BuildRequires:	perl-XML-Simple
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
