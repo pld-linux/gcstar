@@ -1,5 +1,6 @@
 %include        /usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
+Summary(pl):	GCstar: zarz±dca kolekcji
 Name:		gcstar
 Version:	0.5.0
 Release:	1
@@ -9,12 +10,28 @@ Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 # Source0-md5:	12ba75fe2f3091c1ccd03864424a34e2
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
+URL:		https://gna.org/projects/gcstar/
 BuildRequires:	perl-Gtk2
 BuildRequires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GCstar is a free application for managing your collections.
+GCstar is an application to manage different kind of collections. It
+is designed to be able to support as many type of collections as
+needed. For the moment it supports these ones:
+ - Movies
+ - Video games
+ - Books
+ - User defined collections
+
+%description -l pl
+GCstar jest aplikacj± do zarz±dzania ró¿nymi rodzajami kolekcji. Jest
+zaprojektowana by móc wspieraæ wszystkie potrzebne typy kolekcji.
+Aktualnie wpsiera kolekcje:
+ - filmów
+ - gier wideo
+ - ksi±¿ek
+ - kolekcje zdefiniowane przez u¿ytkownika
 
 %prep
 %setup -q -n %{name}
