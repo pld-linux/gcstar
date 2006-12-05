@@ -18,8 +18,9 @@ Patch1:		%{name}-desktop.patch
 URL:		https://gna.org/projects/gcstar/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
-BuildRequires:	perl-libwww
 BuildRequires:	perl-XML-Simple
+BuildRequires:	perl-libwww
+Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
