@@ -4,7 +4,7 @@
 #
 %include        /usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
-Summary(pl):	GCstar: zarz±dca kolekcji
+Summary(pl.UTF-8):   GCstar: zarzÄ…dca kolekcji
 Name:		gcstar
 Version:	1.0.0
 Release:	0.9
@@ -33,14 +33,14 @@ needed. For the moment it supports these ones:
  - Books
  - User defined collections
 
-%description -l pl
-GCstar jest aplikacj± do zarz±dzania ró¿nymi rodzajami kolekcji. Jest
-zaprojektowana by móc wspieraæ wszystkie potrzebne typy kolekcji.
+%description -l pl.UTF-8
+GCstar jest aplikacjÄ… do zarzÄ…dzania rÃ³Å¼nymi rodzajami kolekcji. Jest
+zaprojektowana by mÃ³c wspieraÄ‡ wszystkie potrzebne typy kolekcji.
 Aktualnie wspiera kolekcje:
- - filmów
+ - filmÃ³w
  - gier wideo
- - ksi±¿ek
- - kolekcje zdefiniowane przez u¿ytkownika
+ - ksiÄ…Å¼ek
+ - kolekcje zdefiniowane przez uÅ¼ytkownika
 
 %prep
 %setup -q -n %{name}
