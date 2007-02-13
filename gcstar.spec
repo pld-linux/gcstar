@@ -4,7 +4,7 @@
 #
 %include        /usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
-Summary(pl.UTF-8):   GCstar: zarządca kolekcji
+Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
 Version:	1.0.0
 Release:	0.9
