@@ -6,16 +6,16 @@
 Summary:	GCstar: collection manager
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.0.0
-Release:	0.9
+Version:	1.2.2
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	0bf2ce46a4adba23136e65ec6d2bd65d
+# Source0-md5:	c3a20cf6e34522ba901f152ed53d891a
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-perlmoddir.patch
-URL:		https://gna.org/projects/gcstar/
+URL:		http://www.gcstar.org
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
 BuildRequires:	perl-XML-Simple
