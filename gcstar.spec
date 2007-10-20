@@ -15,7 +15,7 @@ Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-perlmoddir.patch
-URL:		http://www.gcstar.org
+URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
 BuildRequires:	perl-XML-Simple
@@ -47,8 +47,6 @@ Aktualnie wspiera kolekcje:
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
