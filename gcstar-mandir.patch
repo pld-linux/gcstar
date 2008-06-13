@@ -1,15 +1,16 @@
---- gcstar/install.orig	2007-01-11 02:37:48.000000000 +0000
-+++ gcstar/install	2007-01-11 02:40:39.000000000 +0000
-@@ -103,7 +103,7 @@
+diff -Nur gcstar.orig/install gcstar/install
+--- gcstar.orig/install	2008-03-05 03:56:00.000000000 +0000
++++ gcstar/install	2008-06-12 13:37:47.000000000 +0000
+@@ -107,7 +107,7 @@
      }
      
      unlink $baseDir.'/bin/'.$binName;
 -    unlink $baseDir.'/man/man1/'.$binName.'.1.gz';
 +    unlink $baseDir.'/share/man/man1/'.$binName.'.1.gz';
- }
  
- sub recursiveCopy
-@@ -155,9 +155,9 @@
+     # remove menu and mime items
+ 
+@@ -187,9 +187,9 @@
      mkpath $baseDir.'/bin';
      copy 'bin/gcstar', $baseDir.'/bin/'.$binName;
      

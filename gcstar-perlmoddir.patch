@@ -1,6 +1,7 @@
---- gcstar/bin/gcstar.orig	2006-11-25 22:25:06.000000000 +0000
-+++ gcstar/bin/gcstar	2006-11-25 22:25:06.000000000 +0000
-@@ -39,23 +39,20 @@
+diff -Nur gcstar.orig/bin/gcstar gcstar/bin/gcstar
+--- gcstar.orig/bin/gcstar	2008-02-14 18:38:28.000000000 +0000
++++ gcstar/bin/gcstar	2008-06-12 13:56:35.000000000 +0000
+@@ -40,27 +40,24 @@
  use Getopt::Long;
  use File::Path;
  use File::Spec;
@@ -11,10 +12,18 @@
 -($ENV{GCS_LIB_DIR} = $ENV{GCS_BIN_DIR}) =~ s/bin\/?$/lib\/gcstar/;
 -($ENV{GCS_SHARE_DIR} = $ENV{GCS_BIN_DIR}) =~ s/bin\/?$/share\/gcstar/;
 -use lib File::Spec->canonpath("$RealBin/../lib/gcstar");
+-if (exists $ENV{PAR_TEMP})
+-{
+-    unshift @INC, "$RealBin/../lib/gcstar";
+-}
 +use lib qw(/usr/share/gcstar/lib);
 +$ENV{GCS_BIN_DIR} = '/usr/bin';
 +$ENV{GCS_LIB_DIR} = '/usr/share/gcstar/lib';
 +$ENV{GCS_SHARE_DIR} = '/usr/share/gcstar';
++#if (exists $ENV{PAR_TEMP})
++#{
++#    unshift @INC, "$RealBin/../lib/gcstar";
++#}
  
  #XDG stuff
  my $home = $ENV{'HOME'};
@@ -28,9 +37,10 @@
  $ENV{XDG_DATA_HOME} = $home.'/.local/share' if ! exists $ENV{XDG_DATA_HOME};
  mkpath $ENV{XDG_DATA_HOME};
  
---- gcstar/install.orig	2007-01-11 05:00:06.000000000 +0000
-+++ gcstar/install	2007-01-11 05:00:10.000000000 +0000
-@@ -165,7 +165,7 @@
+diff -Nur gcstar.orig/install gcstar/install
+--- gcstar.orig/install	2008-03-05 03:56:00.000000000 +0000
++++ gcstar/install	2008-06-12 13:55:33.000000000 +0000
+@@ -197,7 +197,7 @@
  
      #Copying lib
      verbosePrint $lang{InstallCopyDirectory}, $baseDir.'/lib/gcstar';

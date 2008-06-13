@@ -1,11 +1,11 @@
 diff -Nur gcstar.orig/share/applications/gcstar.desktop gcstar/share/applications/gcstar.desktop
---- gcstar.orig/share/applications/gcstar.desktop	2005-11-14 14:55:00.000000000 +0000
-+++ gcstar/share/applications/gcstar.desktop	2006-12-02 18:11:54.000000000 +0000
-@@ -2,6 +2,7 @@
- Encoding=UTF-8
- Name=GCstar
- Comment=Movie Collection Catalog
+--- gcstar.orig/share/applications/gcstar.desktop	2008-05-26 16:53:36.000000000 +0000
++++ gcstar/share/applications/gcstar.desktop	2008-06-12 13:45:06.000000000 +0000
+@@ -8,6 +8,7 @@
+ Comment[es]=Organice sus colecciones de películas, juegos, vídeos, libros, música...
+ Comment[fr]=Gérer vos collections de films, jeux vidéos, livres, musique,...
+ Comment[pt]=Organize as suas colecções de filmes, jogos, vídeos, livros e música...
 +Comment[pl]=Katalog kolekcji
- Comment[en]=Movie Catalog
- Comment[es]=Catálogo de Películas
- Comment[fr]=Catalogue de Films
+ Exec=gcstar %f
+ Icon=gcstar
+ Terminal=false
