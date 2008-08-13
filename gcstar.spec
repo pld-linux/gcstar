@@ -2,7 +2,7 @@
 #	 `/mnt/hda5/tmp/gcstar-0.5.0-root-inter/usr/lib/gcstar/GCLang/BG/GCstar.pm'
 #	- mark with lang() _datadir/lib/GCLang/*
 #
-%include        /usr/lib/rpm/macros.perl
+%include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
@@ -19,9 +19,9 @@ URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
 BuildRequires:	perl-XML-Simple
-BuildRequires:  perl-XML-LibXML
+BuildRequires:	perl-XML-LibXML
 BuildRequires:	perl-libwww
-BuildRequires:  rpm-perlprov
+BuildRequires:	rpm-perlprov
 Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
