@@ -18,8 +18,8 @@ Patch2:		%{name}-perlmoddir.patch
 URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
-BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-XML-LibXML
+BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 Requires(post,postun):	desktop-file-utils
