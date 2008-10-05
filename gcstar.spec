@@ -4,14 +4,15 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
+Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.4.0
+Version:	1.4.2
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	70bebd9e52e2f9d1532e91080604b26f
+# Source0-md5:	6c4b8d94b9577e6aa45bdec2a8d55625
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-perlmoddir.patch
@@ -23,6 +24,39 @@ BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 Requires(post,postun):	desktop-file-utils
+# I don't know why, but builder says the following:
+# /usr/lib/rpm/perl.prov: weird, cannot determine the package name for `/root/tmp/gcstar-1.4.2-root-root/usr/share/gcstar/lib/GCLang/SV/GCstar.pm'
+# and similar
+# By install missed the following packages. /uzsolt/
+Provides:	perl(GCBackend::GCBeXmlBase)
+Provides:	perl(GCDoubleListDialog)
+Provides:	perl(GCExport::GCExportBaseClass)
+Provides:	perl(GCExportImportBase)
+Provides:	perl(GCFieldsSelectionDialog)
+Provides:	perl(GCImport::GCImportBaseClass)
+Provides:	perl(GCItemExtracter)
+Provides:	perl(GCModalDialog)
+Provides:	perl(GCPluginParser)
+Provides:	perl(GCPlugins::GCTVepisodes::GCPluginTvdb)
+Provides:	perl(GCPlugins::GCTVepisodes::GCTVepisodesPluginsBase)
+Provides:	perl(GCPlugins::GCboardgames::GCboardgamesPluginsBase)
+Provides:	perl(GCPlugins::GCbooks::GCbooksAdlibrisPluginsBase)
+Provides:	perl(GCPlugins::GCbooks::GCbooksAmazonPluginsBase)
+Provides:	perl(GCPlugins::GCbooks::GCbooksPluginsBase)
+Provides:	perl(GCPlugins::GCcomics::GCcomicsPluginsBase)
+Provides:	perl(GCPlugins::GCfilms::GCfilmsAmazonPluginsBase)
+Provides:	perl(GCPlugins::GCfilms::GCfilmsPluginsBase)
+Provides:	perl(GCPlugins::GCgames::GCgamesAmazonPluginsBase)
+Provides:	perl(GCPlugins::GCgames::GCgamesPluginsBase)
+Provides:	perl(GCPlugins::GCmusics::GCmusicsPluginsBase)
+Provides:	perl(Gtk2::Dialog)
+Provides:	perl(Gtk2::MenuBar)
+Provides:	perl(Gtk2::MessageDialog)
+Provides:	perl(Gtk2::ScrolledWindow)
+Provides:	perl(Gtk2::Toolbar)
+Provides:	perl(Gtk2::TreeView)
+Provides:	perl(Gtk2::VBox)
+Provides:	perl(Gtk2::Window)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,6 +68,15 @@ needed. For the moment it supports these ones:
  - Video games
  - Books
  - User defined collections
+
+%description -l hu.UTF-8
+GCstar egy alkalmazás, amellyel gyűjtemények különféle fajtáit
+tarthatjuk nyilván. Annyi típusú gyűjteményt tud kezelni, amennyire
+csak szükségünk lehet. Jelenleg a következőket:
+ - filmek
+ - videójátékok
+ - könyvek
+ - felhasználó által definiált gyűjtemények
 
 %description -l pl.UTF-8
 GCstar jest aplikacją do zarządzania różnymi rodzajami kolekcji. Jest
