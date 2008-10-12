@@ -2,17 +2,21 @@
 #	 `/mnt/hda5/tmp/gcstar-0.5.0-root-inter/usr/lib/gcstar/GCLang/BG/GCstar.pm'
 #	- mark with lang() _datadir/lib/GCLang/*
 #
+# /usr/lib/rpm/perl.prov: weird, cannot determine the package name for `/root/tmp/gcstar-1.4.2-root-root/usr/share/gcstar/lib/GCLang/SV/GCstar.pm'
+# and similar
+# TODO: - fix this message, IMHO the first byte of utf8 is the source of error - see with 'less' (uzsolt)
+#       - after the done of the first todo, clear the 'Provides' fields
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.4.2
+Version:	1.4.3
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	6c4b8d94b9577e6aa45bdec2a8d55625
+# Source0-md5:	a4182efaf0f81fba39d1ab8b9b582417
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-perlmoddir.patch
@@ -25,8 +29,6 @@ BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 Requires(post,postun):	desktop-file-utils
 # I don't know why, but builder says the following:
-# /usr/lib/rpm/perl.prov: weird, cannot determine the package name for `/root/tmp/gcstar-1.4.2-root-root/usr/share/gcstar/lib/GCLang/SV/GCstar.pm'
-# and similar
 # By install missed the following packages. /uzsolt/
 Provides:	perl(GCBackend::GCBeXmlBase)
 Provides:	perl(GCDoubleListDialog)
