@@ -1,7 +1,7 @@
 diff -Nur gcstar.orig/bin/gcstar gcstar/bin/gcstar
---- gcstar.orig/bin/gcstar	2008-02-14 18:38:28.000000000 +0000
-+++ gcstar/bin/gcstar	2008-06-12 13:56:35.000000000 +0000
-@@ -40,27 +40,24 @@
+--- gcstar.orig/bin/gcstar	2008-10-12 16:42:54.000000000 +0200
++++ gcstar/bin/gcstar	2008-10-12 16:47:49.000000000 +0200
+@@ -40,17 +40,17 @@
  use Getopt::Long;
  use File::Path;
  use File::Spec;
@@ -24,8 +24,11 @@ diff -Nur gcstar.orig/bin/gcstar gcstar/bin/gcstar
 +#{
 +#    unshift @INC, "$RealBin/../lib/gcstar";
 +#}
++
  
- #XDG stuff
+ # For win32, redirect all the output to files
+ if ($^O =~ /win32/i)
+@@ -68,11 +68,9 @@
  my $home = $ENV{'HOME'};
  $home =~ s/\\/\//g if ($^O =~ /win32/i);
  
