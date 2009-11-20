@@ -30,41 +30,15 @@ BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 Requires(post,postun):	desktop-file-utils
-# I don't know why, but builder says the following:
-# By install missed the following packages. /uzsolt/
-Provides:	perl(GCBackend::GCBeXmlBase)
-Provides:	perl(GCDoubleListDialog)
-Provides:	perl(GCExport::GCExportBaseClass)
-Provides:	perl(GCExportImportBase)
-Provides:	perl(GCFieldsSelectionDialog)
-Provides:	perl(GCImport::GCImportBaseClass)
-Provides:	perl(GCItemExtracter)
-Provides:	perl(GCModalDialog)
-Provides:	perl(GCPluginParser)
-Provides:	perl(GCPlugins::GCTVepisodes::GCPluginTvdb)
-Provides:	perl(GCPlugins::GCTVepisodes::GCTVepisodesPluginsBase)
-Provides:	perl(GCPlugins::GCboardgames::GCboardgamesPluginsBase)
-Provides:	perl(GCPlugins::GCbooks::GCbooksAdlibrisPluginsBase)
-Provides:	perl(GCPlugins::GCbooks::GCbooksAmazonPluginsBase)
-Provides:	perl(GCPlugins::GCbooks::GCbooksPluginsBase)
-Provides:	perl(GCPlugins::GCcomics::GCcomicsPluginsBase)
-Provides:	perl(GCPlugins::GCfilms::GCfilmsAmazonPluginsBase)
-Provides:	perl(GCPlugins::GCfilms::GCfilmsPluginsBase)
-Provides:	perl(GCPlugins::GCgames::GCgamesAmazonPluginsBase)
-Provides:	perl(GCPlugins::GCgames::GCgamesPluginsBase)
-Provides:	perl(GCPlugins::GCmusics::GCmusicsPluginsBase)
-Provides:	perl(GCItemsLists::GCImageLists)
-Provides:	perl(GCItemsLists::GCTextLists)
-Provides:	perl(Gtk2::Dialog)
-Provides:	perl(Gtk2::MenuBar)
-Provides:	perl(Gtk2::MessageDialog)
-Provides:	perl(Gtk2::ScrolledWindow)
-Provides:	perl(Gtk2::Toolbar)
-Provides:	perl(Gtk2::TreeView)
-Provides:	perl(Gtk2::VBox)
-Provides:	perl(Gtk2::Window)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# parts of Gtk2.pm package
+%define gtk2_subpkgs	Dialog\\\\|MenuBar\\\\|MessageDialog\\\\|ScrolledWindow\\\\|Toolbar\\\\|TreeView\\\\|VBox\\\\|Window
+
+# don't require/provide itself, it isn't in standard search path
+%define	_noautoprov	^perl(GC.*)$
+%define	_noautoreq	^perl(GC.*)$ ^perl(Gtk2::\\\\(%{gtk2_subpkgs}\\\\))$
 
 %description
 GCstar is an application to manage different kind of collections. It
@@ -123,8 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}
 %{_mandir}/man1/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
