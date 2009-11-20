@@ -6,17 +6,18 @@
 # and similar
 # TODO: - fix this message, IMHO the first byte of utf8 is the source of error - see with 'less' (uzsolt)
 #       - after the done of the first todo, clear the 'Provides' fields
+#	- maybe create subpackage
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.4.3
+Version:	1.5.0
 Release:	1
 License:	GPL
-Group:		Applications
+Group:		X11/Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	a4182efaf0f81fba39d1ab8b9b582417
+# Source0-md5:	966652b3f331d72c76509e13fc4dfba5
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-perlmoddir.patch
@@ -51,6 +52,8 @@ Provides:	perl(GCPlugins::GCfilms::GCfilmsPluginsBase)
 Provides:	perl(GCPlugins::GCgames::GCgamesAmazonPluginsBase)
 Provides:	perl(GCPlugins::GCgames::GCgamesPluginsBase)
 Provides:	perl(GCPlugins::GCmusics::GCmusicsPluginsBase)
+Provides:	perl(GCItemsLists::GCImageLists)
+Provides:	perl(GCItemsLists::GCTextLists)
 Provides:	perl(Gtk2::Dialog)
 Provides:	perl(Gtk2::MenuBar)
 Provides:	perl(Gtk2::MessageDialog)
@@ -93,7 +96,7 @@ Aktualnie wspiera kolekcje:
 %setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+# %patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -120,6 +123,15 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
+%{_libdir}/%{name}
+# %dir %{_libdir}/%{name}
+# %dir %{_libdir}/%{name}/GCPlugins
+# %{_libdir}/%{name}/GCBackend
+# %{_libdir}/%{name}/GCItemsLists
+# %{_libdir}/%{name}/GCPlugins/GCPluginsBase.pm
+# %{_libdir}/%{name}/*.pm
+# %{_libdir}/%{name}/GCExport
+# %{_libdir}/%{name}/GCExtract
 %{_datadir}/%{name}/*
 %{_mandir}/man1/*
 %{_desktopdir}/*.desktop
