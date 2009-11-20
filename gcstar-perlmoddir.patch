@@ -1,7 +1,6 @@
-diff -Nur gcstar.orig/bin/gcstar gcstar/bin/gcstar
---- gcstar.orig/bin/gcstar	2008-10-12 16:42:54.000000000 +0200
-+++ gcstar/bin/gcstar	2008-10-12 16:47:49.000000000 +0200
-@@ -40,17 +40,17 @@
+--- gcstar-orig/bin/gcstar	2009-11-19 21:31:24.000000000 +0100
++++ gcstar/bin/gcstar	2009-11-20 22:36:58.731092949 +0100
+@@ -40,17 +40,12 @@
  use Getopt::Long;
  use File::Path;
  use File::Spec;
@@ -20,30 +19,54 @@ diff -Nur gcstar.orig/bin/gcstar gcstar/bin/gcstar
 +$ENV{GCS_BIN_DIR} = '/usr/bin';
 +$ENV{GCS_LIB_DIR} = '/usr/share/gcstar/lib';
 +$ENV{GCS_SHARE_DIR} = '/usr/share/gcstar';
-+#if (exists $ENV{PAR_TEMP})
-+#{
-+#    unshift @INC, "$RealBin/../lib/gcstar";
-+#}
-+
  
  # For win32, redirect all the output to files
  if ($^O =~ /win32/i)
-@@ -68,11 +68,9 @@
- my $home = $ENV{'HOME'};
- $home =~ s/\\/\//g if ($^O =~ /win32/i);
+@@ -80,23 +75,24 @@
+ $ENV{GCS_CONFIG_HOME} = $ENV{XDG_CONFIG_HOME} if ($^O =~ /win32/i);
  
--$ENV{XDG_CONFIG_HOME} = $RealBin.'/../config' if ($^O =~ /win32/i);
- $ENV{XDG_CONFIG_HOME} = $home.'/.config' if ! exists $ENV{XDG_CONFIG_HOME};
+ # Migrate settings from old windows data path if required
+-if (($^O =~ /win32/i) && !(-d $ENV{XDG_DATA_HOME}))
+-{
+-    if (-d $RealBin.'/../config')
+-    {	
+-        print ("Need to migrate settings from old gcstar data store\n");
+-		mkpath $ENV{XDG_CONFIG_HOME};
+-        mkpath $ENV{XDG_DATA_HOME};
+-		my $winRealBin = $RealBin;
+-		$winRealBin =~ s/\//\\/g;
+-		my $winXDGConfig = $ENV{XDG_CONFIG_HOME};
+-		$winXDGConfig =~ s/\//\\/g;
+-		my $winXDGData = $ENV{XDG_CONFIG_HOME};
+-		$winXDGData =~ s/\//\\/g;
+-		system "xcopy /Y \"".$winRealBin."\\..\\config\" \"".$winXDGConfig."\"";
+-		system "xcopy /Y \"".$winRealBin."\\..\\data\" \"".$winXDGData."\"";
+-    } 
+-}
++# we don't need it, we are using linux (uzsolt)
++# if (($^O =~ /win32/i) && !(-d $ENV{XDG_DATA_HOME}))
++# {
++#     if (-d $RealBin.'/../config')
++#     {	
++#         print ("Need to migrate settings from old gcstar data store\n");
++# 		mkpath $ENV{XDG_CONFIG_HOME};
++#         mkpath $ENV{XDG_DATA_HOME};
++# 		my $winRealBin = $RealBin;
++# 		$winRealBin =~ s/\//\\/g;
++# 		my $winXDGConfig = $ENV{XDG_CONFIG_HOME};
++# 		$winXDGConfig =~ s/\//\\/g;
++# 		my $winXDGData = $ENV{XDG_CONFIG_HOME};
++# 		$winXDGData =~ s/\//\\/g;
++# 		system "xcopy /Y \"".$winRealBin."\\..\\config\" \"".$winXDGConfig."\"";
++# 		system "xcopy /Y \"".$winRealBin."\\..\\data\" \"".$winXDGData."\"";
++#     } 
++# }
+ 
  mkpath $ENV{XDG_CONFIG_HOME};
- 
--$ENV{XDG_DATA_HOME} = $RealBin.'/../data' if ($^O =~ /win32/i);
- $ENV{XDG_DATA_HOME} = $home.'/.local/share' if ! exists $ENV{XDG_DATA_HOME};
  mkpath $ENV{XDG_DATA_HOME};
- 
-diff -Nur gcstar.orig/install gcstar/install
---- gcstar.orig/install	2008-03-05 03:56:00.000000000 +0000
-+++ gcstar/install	2008-06-12 13:55:33.000000000 +0000
-@@ -197,7 +197,7 @@
+--- gcstar-orig/install	2009-11-19 20:59:19.000000000 +0100
++++ gcstar/install	2009-11-20 22:24:55.315124623 +0100
+@@ -256,7 +256,7 @@
  
      #Copying lib
      verbosePrint $lang{InstallCopyDirectory}, $baseDir.'/lib/gcstar';
