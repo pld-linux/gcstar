@@ -124,15 +124,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
-# %{_libdir}/%{name}
-# %dir %{_libdir}/%{name}
-# %dir %{_libdir}/%{name}/GCPlugins
-# %{_libdir}/%{name}/GCBackend
-# %{_libdir}/%{name}/GCItemsLists
-# %{_libdir}/%{name}/GCPlugins/GCPluginsBase.pm
-# %{_libdir}/%{name}/*.pm
-# %{_libdir}/%{name}/GCExport
-# %{_libdir}/%{name}/GCExtract
 %{_datadir}/%{name}/*
 %{_mandir}/man1/*
 %{_desktopdir}/*.desktop
