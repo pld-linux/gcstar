@@ -20,6 +20,7 @@ Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 # Source0-md5:	966652b3f331d72c76509e13fc4dfba5
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
+# copy gcstar perl-libs to /usr/share instead of /usr/lib
 Patch2:		%{name}-perlmoddir.patch
 URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
@@ -96,7 +97,7 @@ Aktualnie wspiera kolekcje:
 %setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
-# %patch2 -p1
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -123,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
-%{_libdir}/%{name}
+# %{_libdir}/%{name}
 # %dir %{_libdir}/%{name}
 # %dir %{_libdir}/%{name}/GCPlugins
 # %{_libdir}/%{name}/GCBackend
