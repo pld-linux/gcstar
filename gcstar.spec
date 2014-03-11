@@ -12,12 +12,12 @@ Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.6.2
-Release:	1
+Version:	1.7.0
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	85d44683e72ed51aa1cc3fbcc5d6da43
+# Source0-md5:	94d0c4d6acc912b4b4d3a72d934cc16d
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 # copy gcstar perl-libs to /usr/share instead of /usr/lib
