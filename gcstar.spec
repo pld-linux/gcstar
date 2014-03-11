@@ -25,6 +25,7 @@ Patch2:		%{name}-perlmoddir.patch
 URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
+BuildRequires:	perl-HTML-Parser
 BuildRequires:	perl-Sort-Naturally
 BuildRequires:	perl-XML-LibXML
 BuildRequires:	perl-XML-Simple
