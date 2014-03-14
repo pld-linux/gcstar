@@ -85,7 +85,7 @@ find -type f -name '*.pm' | xargs sed -i 's/^\xef\xbb\xbf//'
 rm -rf $RPM_BUILD_ROOT
 
 ./install --text \
-	--nomenu \
+	--nomenu --noclean \
 	--prefix=$RPM_BUILD_ROOT%{_prefix}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
