@@ -93,7 +93,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install share/applications/gcstar.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install share/gcstar/icons/gcstar_64x64.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
-install -d $RPM_BUILD_ROOT%{_iconsdir}/hicolor/{16x16,22x22,24x24,32x32,36x36,48x48,64x64,72x72,96x96,128x128,192x192,256x256,scalable}
+install -d $RPM_BUILD_ROOT%{_iconsdir}/hicolor/{16x16,22x22,24x24,32x32,36x36,48x48,64x64,72x72,96x96,128x128,192x192,256x256,scalable}/apps
 install share/gcstar/icons/gcstar_16x16.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 install share/gcstar/icons/gcstar_22x22.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/22x22/apps/%{name}.png
 install share/gcstar/icons/gcstar_24x24.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/24x24/apps/%{name}.png
