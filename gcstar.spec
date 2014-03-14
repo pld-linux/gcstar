@@ -7,6 +7,8 @@
 # TODO: - fix this message, IMHO the first byte of utf8 is the source of error - see with 'less' (uzsolt)
 #       - after the done of the first todo, clear the 'Provides' fields
 #	- maybe create subpackage
+#	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
