@@ -11,7 +11,6 @@
 #	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
 #	- install icons from _datadir/gcstar/icons/* to proper place
 #	- install mime data to proper place
-#	- install desktop file to proper place
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
