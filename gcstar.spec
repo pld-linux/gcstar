@@ -20,7 +20,7 @@ Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
 Version:	1.7.0
 Release:	0.1
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
 # Source0-md5:	94d0c4d6acc912b4b4d3a72d934cc16d
