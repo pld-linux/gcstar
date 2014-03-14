@@ -108,7 +108,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/gcstar
-%{_datadir}/%{name}
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/fonts
+%{_datadir}/%{name}/genres
+%{_datadir}/%{name}/helpers
+%{_datadir}/%{name}/html_models
+%{_datadir}/%{name}/icons
+%{_datadir}/%{name}/lib
+%{_datadir}/%{name}/list_bg
+%{_datadir}/%{name}/logos
+%{_datadir}/%{name}/overlays
+%{_datadir}/%{name}/panels
+%{_datadir}/%{name}/schemas
+%{_datadir}/%{name}/style
+%{_datadir}/%{name}/xml_models
+%{_datadir}/%{name}/xslt
 %{_mandir}/man1/gcstar.1*
 %{_desktopdir}/gcstar.desktop
 %{_pixmapsdir}/gcstar.png
