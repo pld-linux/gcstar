@@ -9,7 +9,6 @@
 #	- maybe create subpackage
 #	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
 #	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
-#	- install icons from _datadir/gcstar/icons/* to proper place
 #	- install mime data to proper place
 #
 %include	/usr/lib/rpm/macros.perl
@@ -93,6 +92,21 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install share/applications/gcstar.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install share/gcstar/icons/gcstar_64x64.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
+install -d $RPM_BUILD_ROOT%{_iconsdir}/hicolor/{16x16,22x22,24x24,32x32,36x36,48x48,64x64,72x72,96x96,128x128,192x192,256x256,scalable}
+install share/gcstar/icons/gcstar_16x16.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+install share/gcstar/icons/gcstar_22x22.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/22x22/apps/%{name}.png
+install share/gcstar/icons/gcstar_24x24.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/24x24/apps/%{name}.png
+install share/gcstar/icons/gcstar_32x32.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+install share/gcstar/icons/gcstar_36x36.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/36x36/apps/%{name}.png
+install share/gcstar/icons/gcstar_48x48.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+install share/gcstar/icons/gcstar_64x64.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/64x64/apps/%{name}.png
+install share/gcstar/icons/gcstar_72x72.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/72x72/apps/%{name}.png
+install share/gcstar/icons/gcstar_96x96.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/96x96/apps/%{name}.png
+install share/gcstar/icons/gcstar_128x128.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/128x128/apps/%{name}.png
+install share/gcstar/icons/gcstar_192x192.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/192x192/apps/%{name}.png
+install share/gcstar/icons/gcstar_256x256.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/256x256/apps/%{name}.png
+install share/gcstar/icons/gcstar_scalable.svg $RPM_BUILD_ROOT%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
