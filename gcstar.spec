@@ -114,7 +114,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/helpers
 %{_datadir}/%{name}/html_models
 %{_datadir}/%{name}/icons
-%{_datadir}/%{name}/lib
+%dir %{_datadir}/%{name}/lib
+%{_datadir}/%{name}/lib/GCBackend
+%{_datadir}/%{name}/lib/GCExport
+%{_datadir}/%{name}/lib/GCExtract
+%{_datadir}/%{name}/lib/GCGraphicComponents
+%{_datadir}/%{name}/lib/GCImport
+%{_datadir}/%{name}/lib/GCItemsLists
+%{_datadir}/%{name}/lib/GCLang
+%{_datadir}/%{name}/lib/GCModels
+%{_datadir}/%{name}/lib/GCPlugins
+%{_datadir}/%{name}/lib/*.pm
 %{_datadir}/%{name}/list_bg
 %{_datadir}/%{name}/logos
 %{_datadir}/%{name}/overlays
