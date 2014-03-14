@@ -9,7 +9,6 @@
 #	- maybe create subpackage
 #	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
 #	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
-#	- install mime data to proper place
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
@@ -107,6 +106,9 @@ install share/gcstar/icons/gcstar_128x128.png $RPM_BUILD_ROOT%{_iconsdir}/hicolo
 install share/gcstar/icons/gcstar_192x192.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/192x192/apps/%{name}.png
 install share/gcstar/icons/gcstar_256x256.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/256x256/apps/%{name}.png
 install share/gcstar/icons/gcstar_scalable.svg $RPM_BUILD_ROOT%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
+
+install -d $RPM_BUILD_ROOT%{_datadir}/mime/packages
+install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 
 %clean
 rm -rf $RPM_BUILD_ROOT
