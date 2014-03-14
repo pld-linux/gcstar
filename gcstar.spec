@@ -107,8 +107,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/gcstar
 %{_datadir}/%{name}
-%{_mandir}/man1/*
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
+%{_mandir}/man1/gcstar.1*
+%{_desktopdir}/gcstar.desktop
+%{_pixmapsdir}/gcstar.png
