@@ -111,8 +111,8 @@ install share/gcstar/icons/gcstar_scalable.svg $RPM_BUILD_ROOT%{_iconsdir}/hicol
 install -d $RPM_BUILD_ROOT%{_datadir}/mime/packages
 install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/LICENSE
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/lib/GCLang.pm.orig
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/lib/GCLang.pm.orig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
