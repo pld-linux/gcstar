@@ -8,6 +8,7 @@
 # TODO:
 #	- maybe create subpackage
 #	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
+#	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
