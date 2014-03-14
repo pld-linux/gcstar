@@ -96,9 +96,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database_post
+%update_icon_cache hicolor
+%update_mime_database
 
 %postun
 %update_desktop_database_postun
+%update_icon_cache hicolor
+%update_mime_database
 
 %files
 %defattr(644,root,root,755)
