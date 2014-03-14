@@ -77,6 +77,9 @@ Aktualnie wspiera kolekcje:
 %patch1 -p1
 %patch2 -p1
 
+#rm BOM from files - it can confuse perl.prov
+find -type f -name '*.pm' | xargs sed -i 's/^\xef\xbb\xbf//'
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
