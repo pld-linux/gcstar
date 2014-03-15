@@ -110,7 +110,6 @@ install -d $RPM_BUILD_ROOT%{_datadir}/mime/packages
 install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/lib/GCLang.pm.orig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
