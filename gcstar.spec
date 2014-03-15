@@ -6,7 +6,6 @@
 #	Anyway we don't want to provide/requires perl modules from non-standard dirs
 #
 # TODO:
-#       - after the done of the first todo, clear the 'Provides' fields
 #	- maybe create subpackage
 #	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
 #
