@@ -121,7 +121,33 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/lib/GCGraphicComponents
 %{_datadir}/%{name}/lib/GCImport
 %{_datadir}/%{name}/lib/GCItemsLists
-%{_datadir}/%{name}/lib/GCLang
+%dir %{_datadir}/%{name}/lib/GCLang
+%lang(ar) %{_datadir}/%{name}/lib/GCLang/AR
+%lang(bg) %{_datadir}/%{name}/lib/GCLang/BG
+%lang(ca) %{_datadir}/%{name}/lib/GCLang/CA
+%lang(cs) %{_datadir}/%{name}/lib/GCLang/CS
+%lang(de) %{_datadir}/%{name}/lib/GCLang/DE
+%lang(el) %{_datadir}/%{name}/lib/GCLang/EL
+%lang(en) %{_datadir}/%{name}/lib/GCLang/EN
+%lang(es) %{_datadir}/%{name}/lib/GCLang/ES
+%lang(fr) %{_datadir}/%{name}/lib/GCLang/FR
+%lang(gl) %{_datadir}/%{name}/lib/GCLang/GL
+%lang(hu) %{_datadir}/%{name}/lib/GCLang/HU
+%lang(id) %{_datadir}/%{name}/lib/GCLang/ID
+%lang(it) %{_datadir}/%{name}/lib/GCLang/IT
+%lang(nl) %{_datadir}/%{name}/lib/GCLang/NL
+%lang(pl) %{_datadir}/%{name}/lib/GCLang/PL
+%lang(pt) %{_datadir}/%{name}/lib/GCLang/PT
+%lang(ro) %{_datadir}/%{name}/lib/GCLang/RO
+%lang(ru) %{_datadir}/%{name}/lib/GCLang/RU
+%lang(sr) %{_datadir}/%{name}/lib/GCLang/SR
+%lang(sv) %{_datadir}/%{name}/lib/GCLang/SV
+%lang(tr) %{_datadir}/%{name}/lib/GCLang/TR
+%lang(uk) %{_datadir}/%{name}/lib/GCLang/UK
+%lang(zh) %{_datadir}/%{name}/lib/GCLang/ZH
+%lang(zh_CN) %{_datadir}/%{name}/lib/GCLang/ZH_CN
+%{_datadir}/%{name}/lib/GCLang/GCLangUtils.pm
+%{_datadir}/%{name}/lib/GCLang/README
 %{_datadir}/%{name}/lib/GCModels
 %{_datadir}/%{name}/lib/GCPlugins
 %{_datadir}/%{name}/lib/*.pm
