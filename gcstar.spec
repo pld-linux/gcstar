@@ -38,12 +38,10 @@ Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# parts of Gtk2.pm package
-%define gtk2_subpkgs	Dialog\\\\|MenuBar\\\\|MessageDialog\\\\|ScrolledWindow\\\\|Toolbar\\\\|TreeView\\\\|VBox\\\\|Window
-
-# don't require/provide itself, it isn't in standard search path
-%define	_noautoprov	^perl(GC.*)$
-%define	_noautoreq	^perl(GC.*)$ ^perl(Gtk2::\\\\(%{gtk2_subpkgs}\\\\))$
+# don't provide itself, it isn't in standard search path
+%define	_noautoprov	'perl\\(GC.*\\)'
+# don't require itself, it isn't in standard search path and subpackages of Gtk2.pm
+%define _noautoreq_perl		GC.* Gtk2::Dialog Gtk2::MenuBar Gtk2::MessageDialog Gtk2::ScrolledWindow Gtk2::Toolbar Gtk2::TreeView Gtk2::VBox Gtk2::Window
 
 %description
 GCstar is an application to manage different kind of collections. It
