@@ -6,7 +6,7 @@
 #	Anyway we don't want to provide/requires perl modules from non-standard dirs
 #
 # TODO:
-#	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
+#	- fix permissions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
 #	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
 #
 %include	/usr/lib/rpm/macros.perl
