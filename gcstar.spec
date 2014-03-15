@@ -42,7 +42,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 # don't provide itself, it isn't in standard search path
 %define	_noautoprov	'perl\\(GC.*\\)'
 # don't require itself, it isn't in standard search path and subpackages of Gtk2.pm
-%define _noautoreq_perl		GC.* Gtk2::Dialog Gtk2::MenuBar Gtk2::MessageDialog Gtk2::ScrolledWindow Gtk2::Toolbar Gtk2::TreeView Gtk2::VBox Gtk2::Window
+%define _noautoreq_perl		GC.* Gtk2::Dialog Gtk2::EventBox Gtk2::Frame Gtk2::HBox Gtk2::MenuBar Gtk2::MessageDialog Gtk2::ScrolledWindow Gtk2::SimpleList Gtk2::Table Gtk2::Toolbar Gtk2::TreeView Gtk2::VBox Gtk2::Window
 
 %description
 GCstar is an application to manage different kind of collections. It
