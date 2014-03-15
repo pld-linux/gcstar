@@ -1,6 +1,5 @@
 # NOTES:- warnings like this: /usr/lib/rpm/perl.prov: weird, cannot determine the package name for
 #	 `/mnt/hda5/tmp/gcstar-0.5.0-root-inter/usr/lib/gcstar/GCLang/BG/GCstar.pm'
-#	- mark with lang() _datadir/lib/GCLang/*
 #
 # /usr/lib/rpm/perl.prov: weird, cannot determine the package name for `/root/tmp/gcstar-1.4.2-root-root/usr/share/gcstar/lib/GCLang/SV/GCstar.pm'
 # and similar
