@@ -1,9 +1,11 @@
-# NOTES:- warnings like this: /usr/lib/rpm/perl.prov: weird, cannot determine the package name for
+# NOTES: - warnings like this: /usr/lib/rpm/perl.prov: weird, cannot determine the package name for
 #	 `/mnt/hda5/tmp/gcstar-0.5.0-root-inter/usr/lib/gcstar/GCLang/BG/GCstar.pm'
+#	Above is caused by mismatches of file/dir names of *.pm files and "package PKGNAME;" declarations.
+#	Fixing this is real PITA, moreover - our perl.{prov,req} don't handle declarations
+#	more then 1 package in 1 file.
+#	Anyway we don't want to provide/requires perl modules from non-standard dirs
 #
-# /usr/lib/rpm/perl.prov: weird, cannot determine the package name for `/root/tmp/gcstar-1.4.2-root-root/usr/share/gcstar/lib/GCLang/SV/GCstar.pm'
-# and similar
-# TODO: - fix this message, IMHO the first byte of utf8 is the source of error - see with 'less' (uzsolt)
+# TODO:
 #       - after the done of the first todo, clear the 'Provides' fields
 #	- maybe create subpackage
 #	- fix permssions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
