@@ -34,6 +34,7 @@ BuildRequires:	perl-XML-LibXML
 BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(macros) >= 1.654
 Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
