@@ -122,6 +122,7 @@ install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers/xdg-open
 %{__rmdir} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers
+%{__rm} -f $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
