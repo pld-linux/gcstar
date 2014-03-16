@@ -36,6 +36,7 @@ BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpmbuild(macros) >= 1.654
 # for statistics
+Suggests:	fonts-TTF-RedHat-liberation
 Suggests:	perl-Date-Calc
 Suggests:	perl-GD-Graph
 Suggests:	perl-GD
