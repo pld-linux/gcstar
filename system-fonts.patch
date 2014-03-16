@@ -1,0 +1,11 @@
+--- gcstar/lib/gcstar/GCStats.pm.orig	2014-03-16 09:04:57.573328268 +0000
++++ gcstar/lib/gcstar/GCStats.pm	2014-03-16 09:10:05.350021621 +0000
+@@ -57,7 +57,7 @@ BEGIN {
+         my $self  = {parent => $parent};
+         bless ($self, $class);
+ 
+-        GD::Text->font_path($ENV{GCS_SHARE_DIR}.'/fonts');
++        GD::Text->font_path('/usr/share/fonts/TTF/');
+ 
+         return $self;
+     }

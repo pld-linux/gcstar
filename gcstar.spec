@@ -24,6 +24,7 @@ Patch1:		%{name}-desktop.patch
 # copy gcstar perl-libs to /usr/share instead of /usr/lib
 Patch2:		%{name}-perlmoddir.patch
 Patch3:		system-xdgopen.patch
+Patch4:		system-fonts.patch
 URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
@@ -81,6 +82,8 @@ Aktualnie wspiera kolekcje:
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%undos lib/gcstar/GCStats.pm
+%patch4 -p1
 
 #rm BOM from files - it can confuse perl.prov
 find -type f -name '*.pm' | xargs sed -i 's/^\xef\xbb\xbf//'
