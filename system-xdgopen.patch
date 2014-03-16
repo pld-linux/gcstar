@@ -1,0 +1,22 @@
+--- gcstar/lib/gcstar/GCGraphicComponents/GCBaseWidgets.pm.orig	2014-03-15 17:26:06.830000477 +0000
++++ gcstar/lib/gcstar/GCGraphicComponents/GCBaseWidgets.pm	2014-03-15 17:27:56.726696494 +0000
+@@ -2792,7 +2792,7 @@ BEGIN {
+             my $command;
+             $command = ($^O =~ /win32/i) ? ''
+                      : ($^O =~ /macos/i) ? '/usr/bin/open'
+-                     :                     $ENV{GCS_SHARE_DIR}.'/helpers/xdg-open';
++                     : '/usr/bin/xdg-open';
+ 
+             # Not sure if this is correct, haven't tested with Windows:
+             if ($^O =~ /win32/i)
+--- gcstar/lib/gcstar/GCMainWindow.pm.orig	2014-03-15 17:25:54.859997614 +0000
++++ gcstar/lib/gcstar/GCMainWindow.pm	2014-03-15 17:26:49.373334969 +0000
+@@ -2648,7 +2648,7 @@ use Gtk2;
+             {
+                 $command = ($^O =~ /win32/i) ? ''
+                          : ($^O =~ /macos/i) ? '/usr/bin/open'
+-                         :                     $ENV{GCS_SHARE_DIR}.'/helpers/xdg-open';
++                         : '/usr/bin/xdg-open';
+             }
+ 
+             if ($file && ($format ne 'url'))

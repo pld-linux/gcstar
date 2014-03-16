@@ -6,7 +6,6 @@
 #	Anyway we don't want to provide/requires perl modules from non-standard dirs
 #
 # TODO:
-#	- fix permissions of /usr/share/gcstar/helpers/xdg-open (or use system xdg-open)
 #	- split font package or rm fonts (included in fonts-TTF-RedHat-liberation?)
 #
 %include	/usr/lib/rpm/macros.perl
@@ -15,7 +14,7 @@ Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
 Version:	1.7.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
@@ -24,6 +23,7 @@ Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 # copy gcstar perl-libs to /usr/share instead of /usr/lib
 Patch2:		%{name}-perlmoddir.patch
+Patch3:		system-xdgopen.patch
 URL:		http://www.gcstar.org/
 BuildRequires:	perl-Archive-Zip
 BuildRequires:	perl-Gtk2
@@ -34,6 +34,7 @@ BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpmbuild(macros) >= 1.654
+Requires:	xdg-utils
 Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,6 +76,7 @@ Aktualnie wspiera kolekcje:
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 #rm BOM from files - it can confuse perl.prov
 find -type f -name '*.pm' | xargs sed -i 's/^\xef\xbb\xbf//'
@@ -110,6 +112,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/mime/packages
 install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -131,7 +134,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/genres
-%{_datadir}/%{name}/helpers
 %{_datadir}/%{name}/html_models
 %{_datadir}/%{name}/icons
 %dir %{_datadir}/%{name}/lib
