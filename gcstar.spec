@@ -34,6 +34,10 @@ BuildRequires:	perl-XML-Simple
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpmbuild(macros) >= 1.654
+# for statistics
+Suggests:	perl-Date-Calc
+Suggests:	perl-GD-Graph
+Suggests:	perl-GD
 Requires:	xdg-utils
 Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
