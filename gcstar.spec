@@ -112,7 +112,8 @@ install -d $RPM_BUILD_ROOT%{_datadir}/mime/packages
 install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers/xdg-open
+%{__rmdir} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers
 
 %clean
 rm -rf $RPM_BUILD_ROOT
