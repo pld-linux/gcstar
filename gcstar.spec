@@ -10,12 +10,12 @@ Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
 Name:		gcstar
-Version:	1.7.0
-Release:	0.2
+Version:	1.7.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.gna.org/gcstar/%{name}-%{version}.tar.gz
-# Source0-md5:	94d0c4d6acc912b4b4d3a72d934cc16d
+# Source0-md5:	c109030b9c18c2d71f4d171d1b8c14d9
 Patch0:		%{name}-mandir.patch
 Patch1:		%{name}-desktop.patch
 # copy gcstar perl-libs to /usr/share instead of /usr/lib
@@ -119,7 +119,7 @@ install share/applications/gcstar.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/LICENSE
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers/xdg-open
 %{__rmdir} $RPM_BUILD_ROOT%{_datadir}/%{name}/helpers
-%{__rm} -f $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -139,7 +139,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/gcstar
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/fonts
 %{_datadir}/%{name}/genres
 %{_datadir}/%{name}/html_models
 %{_datadir}/%{name}/icons
