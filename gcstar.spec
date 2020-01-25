@@ -5,7 +5,6 @@
 #	more then 1 package in 1 file.
 #	Anyway we don't want to provide/requires perl modules from non-standard dirs
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	GCstar: collection manager
 Summary(hu.UTF-8):	GCstar: gyűjtemény kezelő
 Summary(pl.UTF-8):	GCstar: zarządca kolekcji
